@@ -25,6 +25,17 @@ class Moto extends Model
 
     public function category()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\Category');
+    }
+
+    public function images()
+    {
+        return $this->hasMany('App\Image');
+    }
+
+    public function setNameAttribute($value)
+    {
+        $this->attributes['name'] = $value;
+        $this->attributes['slug'] = str_slug($value, '-');
     }
 }

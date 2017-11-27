@@ -12,5 +12,21 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Route::group([
+    'prefix' => 'admin', 
+    'namespace' => 'Admin',
+    'middleware' => 'auth',
+], function() {
+    Route::get('/', 'DashboardController@index')->name('admin.dashboard');
+    Route::resource('category', 'CategoryController');
+    Route::resource('moto', 'MotoController');
+});
+
+Auth::routes();
+
+Route::get('contact', 'HomeController@contact');
+Route::get('{slug}', 'HomeController@getMotoByCategorySlug')->name('home.list');
+Route::get('moto/{slug}', 'HomeController@getMotoBySlug');
