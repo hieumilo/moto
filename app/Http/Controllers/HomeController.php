@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use App\Moto;
 
 class HomeController extends Controller
 {
@@ -27,12 +28,30 @@ class HomeController extends Controller
 
     public function getMotoByCategorySlug($slug)
     {
-        return view('home.list');
+        $category = Category::where('slug', $slug)->first();
+
+        $motos = Moto::with(['category' => function($query) use ($slug) {
+            $query->where('slug', $slug);
+        }])
+        ->wherehas('category', function($query) use ($slug) {
+            $query->where('slug', $slug);
+        })
+        ->with('images')
+        ->paginate(12);
+
+        return view('home.list', [
+            'category' => $category,
+            'motos' => $motos,
+        ]);
     }
 
     public function getMotoBySlug($slug)
     {
-        return view('home.detail');
+        $moto = Moto::where('slug', $slug)->with('images')->first();
+
+        return view('home.detail', [
+            'moto' => $moto,
+        ]);
     }
 
     public function contact()

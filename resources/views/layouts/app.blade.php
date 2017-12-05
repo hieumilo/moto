@@ -365,7 +365,53 @@
                     <!-- Header -->
                     <div class="header">
     <!-- Top Bar -->
-    
+    <div class="top-navbar">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <span class="aux-text d-none d-md-inline-block">
+                    <ul class="inline-links inline-links--style-1">
+                        <li class="d-none d-lg-inline-block">
+                            Moto - Multipurpose Template
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope"></i>
+                            <a href="#">support@webpixels.io</a>
+                        </li>
+                    </ul>
+                </span>
+            </div>
+
+            <div class="col-md-6">
+                <nav class="top-navbar-menu">
+                    <ul class="top-menu">
+                        <li><a href="#">Đăng nhập</a></li>
+                        <li><a href="#" data-toggle="global-search"><i class="fa fa-search"></i></a></li>
+                        <li class="aux-languages dropdown">
+                            <a href="#">
+                                <img src="assets/images/icons/flags/ro.png">
+                            </a>
+                            <ul id="auxLanguages" class="sub-menu">
+                                <li>
+                                    <a href="#"><span class="language">German</span></a>
+                                </li>
+                                <li>
+                                    <span class="language language-active">English</span>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="language">Greek</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="language">Spanish</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
     <!-- Global Search -->
     <section id="sctGlobalSearch" class="global-search global-search-overlay">
     <div class="container">
@@ -386,7 +432,7 @@
 </section>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-default navbar--link-arrow navbar--bb-1px navbar--uppercase navbar-dropdown--inverse">
+    <nav class="navbar navbar-expand-lg navbar-light bg-default navbar--link-arrow navbar--bb-1px navbar--uppercase navbar-dropdown--inverse navbar--bold">
         <div class="container navbar-container">
             <!-- Brand/Logo -->
                         <a class="navbar-brand" href="../../../index-2.html">
@@ -420,320 +466,43 @@
         <li class="nav-item">
             <a class="nav-link" href="/">Trang chủ</a>
         </li>
-        @foreach (app('App\Http\Controllers\HomeController')->getCategory() as $category)
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('home.list', $category->slug) }}">{{ $category->name }}</a>
-            </li>
-        @endforeach
+        <li class="nav-item dropdown dropdown-bottom">
+            <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Loại xe
+            </a>
+
+            <ul class="dropdown-menu dropdownhover-bottom">
+                @foreach (app('App\Http\Controllers\HomeController')->getCategory() as $category)
+                    <li>
+                        <a href="{{ route('home.list', $category->slug) }}" class="dropdown-item">
+                            {{ $category->name }}
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Đại lý</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Liên hệ</a>
+        </li>
+        
     </ul>
 
 
 </div>
 
-<div class=" d-none d-lg-inline-block d-xl-inline-block">
-    <ul class="navbar-nav ml-auto" data-hover="dropdown">
-        <!-- Search button -->
-        <li class="nav-item nav-item-icon hidden-md-down" data-toggle="global-search">
-            <a href="#" class="nav-link">
-                <span>
-                    <i class="fa fa-search"></i>
-                </span>
-            </a>
-        </li>
-
-        <!-- Login -->
-        <li class="nav-item nav-item-icon">
-            <a href="#" class="nav-link hidden-md-down" data-toggle="dropdown">
-                <i class="fa fa-user"></i>
-            </a>
-
-            <ul class="dropdown-menu dropdown-menu--right dropdown-form">
-    <li>
-        <div class="dropdown-form-inner">
-            <div class="row align-items-center b-xs-bottom">
-                <div class="col-7">
-                    <h3 class="heading heading-5 strong-400 text-capitalize pb-2">Sign in</h3>
-                </div>
-                <div class="col-5">
-                    <a href="#" class="btn-close-dropdown" data-toggle="dropdown">&times;</a>
-                </div>
-            </div>
-
-            <div class="py-4">
-                <form class="form-default">
-                    <div class="form-group">
-                        <input type="email" class="form-control form-control-lg" placeholder="Email">
-                    </div>
-
-                    <div class="form-group">
-                        <input type="password" class="form-control form-control-lg" placeholder="Password">
-                    </div>
-
-                    <div class="form-group mb-0">
-                        <div class=" row align-items-center">
-                            <div class="col-6">
-                                <div class="checkbox">
-                                    <input type="checkbox" id="chkRememberMe">
-                                    <label for="chkRememberMe" class="no-margin">Remember me</label>
-                                </div>
-                            </div>
-
-                            <div class="col-6 text-right">
-                                <button type="submit" class="btn btn-base-1 btn-circle">Sign in</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </li>
-
-    <li class="text-center py-3 b-xs-top">
-        <a href="sign-up-1.html">
-            Create a new account
-        </a>
-    </li>
-</ul>
-        </li>
-
-        <!-- Cart -->
-        <li class="nav-item nav-item-icon dropdown">
-            <a class="nav-link" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fa fa-shopping-bag"></i>
-                <sup class="badge bg-base-1">3</sup>
-            </a>
-
-            <ul class="dropdown-menu dropdown-menu--right px-0">
-                <li>
-                    <div class="dropdown-cart px-0">
-    <div class="dc-header">
-        <h3 class="heading heading-6 strong-600">Cart</h3>
-    </div>
-    <div class="dc-item">
-        <div class="d-flex align-items-center">
-            <div class="dc-image">
-                <a href="#">
-                    <img src="{{ asset('home/images/prv/shop/accessories/img-1a.png') }}" class="img-fluid" alt="">
-                </a>
-            </div>
-            <div class="dc-content">
-                <span class="d-block dc-product-name text-capitalize strong-600 mb-1">
-                    <a href="#">
-                        Wood phone case
-                    </a>
-                </span>
-
-                <span class="dc-quantity">x2</span>
-                <span class="dc-price">$50.00</span>
-            </div>
-            <div class="dc-actions">
-                <button>
-                    <i class="ion-close"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div class="dc-item">
-        <div class="d-flex align-items-center">
-            <div class="dc-image">
-                <a href="#">
-                    <img src="{{ asset('home/images/prv/shop/accessories/img-2a.png') }}" class="img-fluid" alt="">
-                </a>
-            </div>
-            <div class="dc-content">
-                <span class="d-block dc-product-name text-capitalize strong-600 mb-1">
-                    <a href="#">
-                        Leather bag
-                    </a>
-                </span>
-
-                <span class="dc-quantity">x1</span>
-                <span class="dc-price">$250.00</span>
-            </div>
-            <div class="dc-actions">
-                <button>
-                    <i class="ion-close"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div class="dc-item">
-        <div class="d-flex align-items-center">
-            <div class="dc-image">
-                <a href="#">
-                    <img src="{{ asset('home/images/prv/shop/accessories/img-3a.png') }}" class="img-fluid" alt="">
-                </a>
-            </div>
-            <div class="dc-content">
-                <span class="d-block dc-product-name text-capitalize strong-600 mb-1">
-                    <a href="#">
-                        Brown leather wallet
-                    </a>
-                </span>
-
-                <span class="dc-quantity">x1</span>
-                <span class="dc-price">$99.00</span>
-            </div>
-            <div class="dc-actions">
-                <button>
-                    <i class="ion-close"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-    <div class="dc-item py-4">
-        <span class="subtotal-text">Subtotal</span>
-        <span class="subtotal-amount">$450.00</span>
-    </div>
-    <div class="py-4 text-center">
-        <ul class="inline-links inline-links--style-3">
-            <li class="pr-3">
-                <a href="#" class="link link--style-2 text-capitalize">
-                    <i class="ion-person"></i> My account
-                </a>
-            </li>
-            <li class="pr-3">
-                <a href="#" class="link link--style-1 text-capitalize">
-                    <i class="ion-bag"></i> View cart
-                </a>
-            </li>
-            <li>
-                <a href="#" class="link link--style-1 text-capitalize">
-                    <i class="ion-forward"></i> Checkout
-                </a>
-            </li>
-        </ul>
-    </div>
-</div>
-                </li>
-            </ul>
-        </li>
-            </ul>
-</div>
 
         </div>
     </nav>
 </div>
 
         @yield('content')
-<footer id="footer" class="footer ">
-    <div class="footer-top">
-        <div class="container">
-            <div class="row cols-xs-space cols-sm-space cols-md-space">
-                <div class="col-lg-5">
-                    <div class="col">
-                        <img src="{{ asset('home/images/logo/logo-1-c.png') }}">
-                        <span class="clearfix"></span>
-                        <span class="heading heading-sm c-gray-light strong-400">One template. Infinite solutions.</span>
-                        <p class="mt-3">
-                            All the components included in Boomerang are built to the same level of quality as Bootstrap and highlighted with several example pages.
-                        </p>
-                    </div>
-                </div>
 
-                <div class="col-lg-2">
-                    <div class="col">
-                       <h4 class="heading heading-xs strong-600 text-uppercase mb-1">
-                           Support
-                       </h4>
+        @include('layouts.footer')
 
-                       <ul class="footer-links">
-                            <li><a href="#" title="Help center">Help center</a></li>
-                            <li><a href="#" title="Discussions">Discussions</a></li>
-                            <li><a href="#" title="Contact support">Contact</a></li>
-                            <li><a href="#" title="Blog">Blog</a></li>
-                            <li><a href="#" title="Jobs">FAQ</a></li>
-                        </ul>
-                     </div>
-                </div>
 
-                <div class="col-lg-2">
-                    <div class="col">
-                        <h4 class="heading heading-xs strong-600 text-uppercase mb-1">
-                            Company
-                        </h4>
-
-                        <ul class="footer-links">
-                             <li>
-                                 <a href="index.html" title="Home">
-                                     Home
-                                 </a>
-                             </li>
-                             <li>
-                                 <a href="about-creative.html" title="About us">
-                                     About us
-                                 </a>
-                             </li>
-                             <li>
-                                 <a href="services-creative.html" title="Services">
-                                     Services
-                                 </a>
-                             </li>
-                             <li>
-                                 <a href="blog-cards-sidebar-left.html" title="Blog">
-                                     Blog
-                                 </a>
-                             </li>
-                             <li>
-                                 <a href="contact-card.html" title="Contact">
-                                     Contact
-                                 </a>
-                             </li>
-                         </ul>
-                    </div>
-                </div>
-
-                <div class="col-lg-3">
-                    <div class="col">
-                        <h4 class="heading heading-xs strong-600 text-uppercase mb-1">
-                            Get in touch
-                        </h4>
-
-                        <ul class="social-media social-media--style-1-v4">
-                            <li>
-                                <a href="#" class="facebook" target="_blank" data-toggle="tooltip" data-original-title="Facebook">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="instagram" target="_blank" data-toggle="tooltip" data-original-title="Instagram">
-                                    <i class="fa fa-instagram"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="dribbble" target="_blank" data-toggle="tooltip" data-original-title="Dribbble">
-                                    <i class="fa fa-dribbble"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="dribbble" target="_blank" data-toggle="tooltip" data-original-title="Github">
-                                    <i class="fa fa-github"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        <div class="container container-sm">
-             <div class="row">
-                <div class="col">
-                    <div class="copyright text-center">
-                        Copyright &copy; 2017                        <a href="https://webpixels.io/" target="_blank">
-                            <strong>Webpixels</strong>
-                        </a> -
-                        All rights reserved
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
                 </div>
             </div>
         </div><!-- END: st-pusher -->
@@ -816,7 +585,8 @@ less = {
 
 <!-- App JS -->
 <script src="{{ asset('home/js/wpx.app.js') }}"></script>
-
+<script src="{{ asset('home/vendor/deso-slide/js/jquery.desoslide.min.js') }}"></script>
+@yield('script')
 </body>
 
 <!-- Mirrored from preview.webpixels.io/boomerang-v3.2/html/e-commerce/home-deco/homepage-home-deco.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Nov 2017 11:27:31 GMT -->
