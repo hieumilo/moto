@@ -75,15 +75,17 @@ class MotoController extends Controller
 
         $moto = Moto::create($data);
 
-        foreach ($request->images as $image) {
-            $arr_files[] = [
-                'image' => Helper::upload($image),
-                'moto_id' => $moto->id,
-            ];
+        if ($request->images) {
+            foreach ($request->images as $image) {
+                $arr_files[] = [
+                    'image' => Helper::upload($image),
+                    'moto_id' => $moto->id,
+                ];
+            }
+
+            Image::insert($arr_files);
         }
-
-        Image::insert($arr_files);
-
+        
         return redirect()->route('moto.index')->with('message', 'Thêm mới thành công');
     }
 
@@ -109,7 +111,7 @@ class MotoController extends Controller
         $moto = Moto::where('id', $id)
             ->with('images')
             ->with('category')
-            ->get();
+            ->first();
         $categories = Category::all();
 
         return view('admin.moto.edit', [
@@ -154,14 +156,16 @@ class MotoController extends Controller
         $moto = Moto::find($id);
         $moto->update($data);
 
-        foreach ($request->images as $image) {
-            $arr_files[] = [
-                'image' => Helper::upload($image),
-                'moto_id' => $moto->id,
-            ];
-        }
+        if ($request->images) {
+            foreach ($request->images as $image) {
+                $arr_files[] = [
+                    'image' => Helper::upload($image),
+                    'moto_id' => $moto->id,
+                ];
+            }
 
-        Image::insert($arr_files);
+            Image::insert($arr_files);
+        }
 
         return redirect()->route('moto.index')->with('message', 'Cập nhật thành công');
     }

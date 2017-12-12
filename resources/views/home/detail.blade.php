@@ -131,7 +131,7 @@
                 <div class="col-lg-6">
                     <div class="feature feature--boxed-border feature--bg-1">
                         <h3 class="heading heading-6 strong-600">Truyền động</h3>
-                        <div>{{ $moto->drive_train }}</div>
+                        <div>{!! $moto->drive_train !!}</div>
                     </div>
                 </div>
             </div>
@@ -140,14 +140,14 @@
                 <div class="col-lg-6">
                     <div class="feature feature--boxed-border feature--bg-1">
                         <h3 class="heading heading-6 strong-600">Hệ thống giảm sóc</h3>
-                        {{ $moto->suspension }}
+                        {!! $moto->suspension !!}
                     </div>
                 </div>
 
                 <div class="col-lg-6">
                     <div class="feature feature--boxed-border feature--bg-1">
                         <h3 class="heading heading-6 strong-600">Khung sườn</h3>
-                        {{ $moto->frame }}
+                        {!! $moto->frame !!}
                     </div>
                 </div>
             </div>
@@ -156,14 +156,14 @@
                 <div class="col-lg-6">
                     <div class="feature feature--boxed-border feature--bg-1">
                         <h3 class="heading heading-6 strong-600">Phanh(Thắng)</h3>
-                        <div>{{ $moto->brakes }}</div>
+                        <div>{!! $moto->brakes !!}</div>
                     </div>
                 </div>
 
                 <div class="col-lg-6">
                     <div class="feature feature--boxed-border feature--bg-1">
                         <h3 class="heading heading-6 strong-600">Kích thước</h3>
-                        <div>{{ $moto->dimensions }}</div>
+                        <div>{!! $moto->dimensions !!}</div>
                     </div>
                 </div>
             </div>

@@ -8,7 +8,6 @@ use App\Moto;
 
 class HomeController extends Controller
 {
-
     /**
      * Show the application dashboard.
      *

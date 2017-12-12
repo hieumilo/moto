@@ -27,6 +27,6 @@ Route::group([
 
 Auth::routes();
 
-Route::get('contact', 'HomeController@contact');
+Route::get('contact', 'HomeController@contact')->name('home.contact');;
 Route::get('{slug}', 'HomeController@getMotoByCategorySlug')->name('home.list');
 Route::get('moto/{slug}', 'HomeController@getMotoBySlug')->name('moto.detail');

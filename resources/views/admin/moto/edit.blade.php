@@ -19,7 +19,7 @@
       <div class="row">
         <!-- left column -->
         <div class="col-md-12">
-          <form action="{{ route('moto.update', 1) }}" method="POST" role="form" enctype="multipart/form-data">
+          <form action="{{ route('moto.update', $moto->id) }}" method="POST" role="form" enctype="multipart/form-data">
             {{ csrf_field() }}
             <input type="hidden" name="_method" value="PUT">
             <!-- general form elements -->
@@ -39,17 +39,15 @@
                 <div class="tab-pane active" id="tab_1">
                   <div class="form-group">
                     <label for="">Tên xe</label>
-                    <input type="text" class="form-control" id="" name="name" placeholder="Nhập tên xe">
+                    <input type="text" class="form-control" id="" name="name" value="{{ old('name') ? old('name') : $moto->name }}"  placeholder="Nhập tên xe">
                   </div>
                   <div class="form-group">
                     <label>Danh mục</label>
-                    <select class="form-control" name="category">
+                    <select class="form-control" name="category_id">
                       <option value="">Chọn 1 danh mục</option>
-                      <option value="1">option 1</option>
-                      <option value="2">option 2</option>
-                      <option value="3">option 3</option>
-                      <option value="4">option 4</option>
-                      <option value="5">option 5</option>
+                      @foreach ($categories as $category)
+                        <option value="{{ $category->id }}" {{  old('category_id') == $category->id ? 'selected' : $category->id == $moto->category->id ? 'selected' : '' }}>{{ $category->name }}</option>
+                      @endforeach
                     </select>
                   </div>
                   <div class="form-group">
@@ -72,7 +70,7 @@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body pad">
-                      <textarea id="engine" name="engine" rows="10" cols="80"></textarea>
+                      <textarea id="engine" name="engine" rows="10" cols="80" value="{{ old('name') ? old('name') : $moto->name }}"></textarea>
                     </div>
                   </div>
                   <div class="box box-info collapsed-box">
