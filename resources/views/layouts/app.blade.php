@@ -62,6 +62,7 @@
 <link rel="stylesheet" href="{{ asset('home/vendor/revolution-slider/revolution/css/settings.css') }}">
 <link rel="stylesheet" href="{{ asset('home/vendor/revolution-slider/revolution/css/layers.css') }}">
 <link rel="stylesheet" href="{{ asset('home/vendor/revolution-slider/revolution/css/navigation.css') }}">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.5/sweetalert2.min.css" rel="stylesheet">
 
 </head>
 <body>
@@ -452,6 +453,7 @@ less = {
 <!-- App JS -->
 <script src="{{ asset('home/js/wpx.app.js') }}"></script>
 <script src="{{ asset('home/vendor/deso-slide/js/jquery.desoslide.min.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.5/sweetalert2.min.js"></script>
 @yield('script')
 </body>
 

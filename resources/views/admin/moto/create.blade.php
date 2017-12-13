@@ -63,6 +63,22 @@
                     <label for="">Hình ảnh</label>
                     <input type="file" id="" name="images[]" multiple>
                   </div>
+                  <div class="box box-info">
+                    <div class="box-header">
+                      <h3 class="box-title">Mô tả</h3>
+                      <!-- tools box -->
+                      <div class="pull-right box-tools">
+                        <button type="button" class="btn btn-info btn-sm" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                          <i class="fa fa-minus"></i>
+                        </button>
+                      </div>
+                      <!-- /. tools -->
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body pad">
+                      <textarea id="description" name="description" rows="10" cols="80">{{ old('description') }}</textarea>
+                    </div>
+                  </div>
                 </div>
                 <!-- /.tab-pane -->
                 <div class="tab-pane" id="tab_2">
@@ -183,6 +199,7 @@
 @section('script')
 <script>
   $(function () {
+    CKEDITOR.replace('description');
     CKEDITOR.replace('engine');
     CKEDITOR.replace('drive_train');
     CKEDITOR.replace('frame');

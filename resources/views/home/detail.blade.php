@@ -38,84 +38,14 @@
                         Liên hệ
                     </span>
 
-                    {{-- <span class="space-xs-md"></span>
-
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <div class="form-default">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <select class="form-control form-control-lg">
-                                                <option>Color</option>
-                                                <option>Yellow</option>
-                                                <option>Orange</option>
-                                                <option>Black</option>
-                                                <option>Purple</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control form-control-lg text-center" value="1">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row mt-2">
-                                    <div class="col-12">
-                                        <!-- Add to cart button -->
-                                        <button type="button" class="btn btn-lg btn-block btn-gray-dark btn-icon-left">
-                                            <i class="icon ion-bag"></i> Add to cart
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Rating stars -->
-                    <div class="rating mt-2">
-                        <span class="star voted" rel="1"></span>
-                        <span class="star voted" rel="2"></span>
-                        <span class="star voted" rel="3"></span>
-                        <span class="star" rel="4"></span>
-                        <span class="star" rel="5"></span>
-
-                        <span class="rating-count">(2 customer reviews)</span>
-                    </div>
-
                     <span class="space-xs-md"></span>
 
                     <!-- Product description -->
                     <div class="product-short-text">
                         <p>
-                            Pellentesque habitant morbi tristique senectus et netus malesuada fames turpis egestas. Vestibulum tortor quam feugiat vitae ultricies eget tempor.
+                            {!! $moto->description !!}
                         </p>
-
-                        <ul class="icons mt-4">
-                            <li class="text-sm">
-                                <i class="icon icon-clothes-029"></i> Exterior: 98% cotton, 2% elastane
-                            </li>
-                            <li class="text-sm">
-                                <i class="icon icon-electronics-002"></i> Machine wash up to 30°/86°F gentle cycle
-                            </li>
-                            <li class="text-sm">
-                                <i class="icon icon-electronics-043"></i> Iron up to 110°C/230°F
-                            </li>
-                        </ul>
-
-                        <ul class="inline-links inline-links--style-1 mt-4">
-                            <li>
-                                <a href="#">Twitter</a>
-                            </li>
-                            <li>
-                                <a href="#">Facebook</a>
-                            </li>
-                            <li>
-                                <a href="#">Pinterest</a>
-                            </li>
-                        </ul>
-                    </div> --}}
+                    </div>
                 </div>
             </div>
         </div>

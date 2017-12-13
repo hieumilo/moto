@@ -15,7 +15,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $motos = Moto::where('available', 1)
+            ->with('images')
+            ->with('category')
+            ->get();
+
+        return view('index', [
+            'motos' => $motos,
+        ]);
     }
 
     public function getCategory()
@@ -51,10 +58,5 @@ class HomeController extends Controller
         return view('home.detail', [
             'moto' => $moto,
         ]);
-    }
-
-    public function contact()
-    {
-        return view('home.contact');
     }
 }

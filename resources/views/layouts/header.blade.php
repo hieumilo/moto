@@ -34,12 +34,6 @@
                                 <li>
                                     <span class="language language-active">English</span>
                                 </li>
-                                <li>
-                                    <a href="#"><span class="language">Greek</span></a>
-                                </li>
-                                <li>
-                                    <a href="#"><span class="language">Spanish</span></a>
-                                </li>
                             </ul>
                         </li>
                     </ul>
@@ -71,7 +65,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-default navbar--link-arrow navbar--bb-1px navbar--uppercase navbar-dropdown--inverse navbar--bold">
         <div class="container navbar-container">
             <!-- Brand/Logo -->
-                        <a class="navbar-brand" href="../../../index-2.html">
+            <a class="navbar-brand" href="/">
                 <img src="{{ asset('home/images/logo/logo-2-b.png') }}" alt="Moto">
             </a>
             
@@ -121,7 +115,7 @@
             <a class="nav-link" href="#">Đại lý</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('home.contact') }}">Liên hệ</a>
+            <a class="nav-link" href="{{ route('home.contact.index') }}">Liên hệ</a>
         </li>
         
     </ul>

@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'HomeController@index');
 
 Route::group([
     'prefix' => 'admin', 
@@ -23,10 +21,12 @@ Route::group([
     Route::get('/', 'DashboardController@index')->name('admin.dashboard');
     Route::resource('category', 'CategoryController');
     Route::resource('moto', 'MotoController');
+    Route::resource('contact', 'ContactController');
 });
 
 Auth::routes();
 
-Route::get('contact', 'HomeController@contact')->name('home.contact');;
+Route::get('contact', 'ContactController@index')->name('home.contact.index');
+Route::post('contact', 'ContactController@store')->name('home.contact.store');
 Route::get('{slug}', 'HomeController@getMotoByCategorySlug')->name('home.list');
 Route::get('moto/{slug}', 'HomeController@getMotoBySlug')->name('moto.detail');

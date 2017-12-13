@@ -52,6 +52,7 @@ class MotoController extends Controller
         $data = [
             'name' => $request->name,
             'category_id' => $request->category_id,
+            'description' => $request->description,
             'engine' => $request->engine,
             'drive_train' => $request->drive_train,
             'frame' => $request->frame,
@@ -132,6 +133,7 @@ class MotoController extends Controller
         $data = [
             'name' => $request->name,
             'category_id' => $request->category_id,
+            'description' => $request->description,
             'engine' => $request->engine,
             'drive_train' => $request->drive_train,
             'frame' => $request->frame,

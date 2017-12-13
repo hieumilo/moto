@@ -8,6 +8,7 @@ class Moto extends Model
 {
     protected $fillable = [
         'name', 
+        'description',
         'engine',
         'drive_train',
         'frame',
@@ -16,6 +17,7 @@ class Moto extends Model
         'dimensions',
         'category_id',
         'user_id',
+        'available',
     ];
 
     public function user()

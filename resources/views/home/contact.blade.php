@@ -45,7 +45,8 @@
         <div class="row justify-content-center">
             <div class="col-lg-10">
                 <!-- Contact form -->
-                <form id="form_contact" class="form-default" role="form">
+                <form id="" action="{{ route('home.contact.store') }}" class="form-default" role="form" method="POST">
+                    {{ csrf_field() }}
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group has-feedback">
@@ -69,7 +70,7 @@
                         <div class="col-md-6">
                             <div class="form-group has-feedback">
                                 <label for="" class="text-uppercase c-gray-light">Địa chỉ</label>
-                                <input type="text" name="website" class="form-control form-control-lg" required="">
+                                <input type="text" name="address" class="form-control form-control-lg" required="">
                                 <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                                 <div class="help-block with-errors"></div>
                             </div>
@@ -87,8 +88,8 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group has-feedback">
-                                <label for="" class="text-uppercase c-gray-light">Message</label>
-                                <textarea name="message" class="form-control no-resize" rows="5" required=""></textarea>
+                                <label for="" class="text-uppercase c-gray-light">Nội dung</label>
+                                <textarea name="content" class="form-control no-resize" rows="5" required=""></textarea>
                                 <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                                 <div class="help-block with-errors"></div>
                             </div>
@@ -106,4 +107,18 @@
     </div>
 </section>
 
+@endsection
+
+@section('script')
+    <script>
+        console.log('{{ session('message') }}')
+        @if (session('message'))
+            swal({
+                type: 'success',
+                title: '{{ session('message') }}',
+                showConfirmButton: false,
+                timer: 2500
+            })
+        @endif
+  </script>
 @endsection
