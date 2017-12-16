@@ -59,4 +59,14 @@ class HomeController extends Controller
             'moto' => $moto,
         ]);
     }
+
+    public function search(Request $request)
+    {
+        $name = $request->s;
+        $motos = Moto::where('name', 'like', '%' . $name . '%')->with('images')->with('category')->paginate(12);
+        
+        return view('home.search', [
+            'motos' => $motos,
+        ]);
+    }
 }

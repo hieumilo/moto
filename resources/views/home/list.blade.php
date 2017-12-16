@@ -13,10 +13,10 @@
 
                     <ol class="breadcrumb breadcrumb--style-2">
                         <li class="breadcrumb-item">
-                            <a href="#" class="text-normal">Home</a>
+                            <a href="/" class="text-normal">Trang chủ</a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="#" class="text-normal">{{ $category->name }}</a>
+                            <span class="text-normal">{{ $category->name }}<span>
                         </li>
                     </ol>
                 </div>

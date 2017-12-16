@@ -28,5 +28,6 @@ Auth::routes();
 
 Route::get('contact', 'ContactController@index')->name('home.contact.index');
 Route::post('contact', 'ContactController@store')->name('home.contact.store');
+Route::get('search', 'HomeController@search')->name('home.search');
 Route::get('{slug}', 'HomeController@getMotoByCategorySlug')->name('home.list');
 Route::get('moto/{slug}', 'HomeController@getMotoBySlug')->name('moto.detail');

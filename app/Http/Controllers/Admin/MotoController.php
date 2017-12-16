@@ -59,6 +59,7 @@ class MotoController extends Controller
             'suspension' => $request->suspension,
             'brakes' => $request->brakes,
             'dimensions' => $request->dimensions,
+            'available' => $request->available ? true : false,
         ];
 
         $rules = [
@@ -140,6 +141,7 @@ class MotoController extends Controller
             'suspension' => $request->suspension,
             'brakes' => $request->brakes,
             'dimensions' => $request->dimensions,
+            'available' => $request->available ? true : false,
         ];
 
         $rules = [

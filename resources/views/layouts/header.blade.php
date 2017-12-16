@@ -48,11 +48,11 @@
         <div class="global-search-backdrop mask-dark--style-2"></div>
 
         <!-- Search form -->
-        <form class="form-horizontal form-global-search z-depth-2-top" role="form">
+        <form class="form-horizontal form-global-search z-depth-2-top" action="{{ route('home.search') }}" role="form" method="GET">
             <div class="px-4">
                 <div class="row">
                     <div class="col-12">
-                        <input type="text" class="search-input" placeholder="Type and hit enter ...">
+                        <input type="text" class="search-input" name="s" placeholder="Nhập tên xe ...">
                     </div>
                 </div>
             </div>
