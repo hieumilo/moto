@@ -55,7 +55,7 @@
                                 </a>
                             </h3>
                             <div class="price-wrapper">
-                                <span class="price heading-6 c-gray-light strong-400">Liên hệ</span>
+                                <a href="{{ route('home.contact.index') }}" class="price heading-6 c-gray-light strong-400">Liên hệ</a>
                             </div>
                         </div>
 

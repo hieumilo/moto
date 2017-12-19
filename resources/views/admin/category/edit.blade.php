@@ -38,7 +38,7 @@
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="button" class="btn btn-default btn-flat">Quay lại</button>
+                <a href="{{ route('category.index') }}" class="btn btn-default btn-flat">Quay lại</a>
                 <button type="submit" class="btn btn-primary btn-flat pull-right">Cập nhật</button>
               </div>
             </form>

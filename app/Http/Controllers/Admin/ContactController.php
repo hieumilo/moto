@@ -62,7 +62,11 @@ class ContactController extends Controller
      */
     public function edit($id)
     {
-        //
+        $contact = Contact::find($id);
+
+        return view('admin.contact.edit', [
+            'contact' => $contact
+        ]);
     }
 
     /**
@@ -74,7 +78,10 @@ class ContactController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $contact = Contact::find($id);
+        $contact->update(['status' => 1]);
+
+        return redirect()->route('contact.index')->with('message', 'Cập nhật thành công');
     }
 
     /**

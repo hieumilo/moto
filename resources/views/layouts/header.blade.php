@@ -8,11 +8,11 @@
                 <span class="aux-text d-none d-md-inline-block">
                     <ul class="inline-links inline-links--style-1">
                         <li class="d-none d-lg-inline-block">
-                            Moto - Multipurpose Template
+                            Khóa luận - Đặng Văn Quân
                         </li>
                         <li>
                             <i class="fa fa-envelope"></i>
-                            <a href="#">support@webpixels.io</a>
+                            <a href="#">admin@gmail.com</a>
                         </li>
                     </ul>
                 </span>

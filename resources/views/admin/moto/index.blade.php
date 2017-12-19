@@ -40,7 +40,7 @@
                       <td>{{ $moto->id }}</td>
                       <td>{{ $moto->name }}</td>
                       <td>{{ $moto->category->name }}</td>
-                      <td>{{ $moto->available }}</td>
+                      <td>{!! $moto->available == 0 ? '<small class="label label-danger"><i class="fa fa-clock-o"></i> Không có sẵn</small>' : '<small class="label label-info"><i class="fa fa-clock-o"></i>Có sẵn</small>' !!}</td>
                       <td>
                         <a class="btn btn-default" href="{{ route('moto.edit', $moto->id) }}">Chỉnh sửa</a>
                         <form action="{{ route('moto.destroy', $moto->id) }}" method="POST" style="display: inline;">

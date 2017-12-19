@@ -43,9 +43,9 @@
                       <td>{{ $contact->email }}</td>
                       <td>{{ $contact->address }}</td>
                       <td>{{ $contact->phone }}</td>
-                      <td>{{ $contact->status }}</td>
+                      <td>{!! $contact->status == 0 ? '<small class="label label-danger"><i class="fa fa-clock-o"></i> Đang chờ</small>' : '<small class="label label-info"><i class="fa fa-clock-o"></i>Đã xác nhận</small>' !!}</td>
                       <td>
-                        <a class="btn btn-default" href="{{ route('contact.edit', $contact->id) }}">Chỉnh sửa</a>
+                        <a class="btn btn-default" href="{{ route('contact.edit', $contact->id) }}">Chi tiết</a>
                         <form action="{{ route('contact.destroy', $contact->id) }}" method="POST" style="display: inline;">
                           {{ csrf_field() }}
                           <input type="hidden" name="_method" value="DELETE">
